@@ -1,1 +1,12 @@
-<%= search_results.get_nearest_station_data %>
+<hr>
+<h1>Nearest Station to You</h1>
+
+<ul>
+  <li>Name: <%= search_results.nearest_station.name %></li>
+  <li>Address: <%= search_results.nearest_station.address %></li>
+  <li>Fuel Type: <%= search_results.nearest_station.fuel_type %></li>
+  <li>
+    Access Times: <%= search_results.nearest_station.access_times %>
+  </li>
+  <li>Distance: <%= search_results.nearest_station.distance %></li>
+</ul>
