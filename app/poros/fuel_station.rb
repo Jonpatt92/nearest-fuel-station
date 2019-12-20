@@ -1,4 +1,5 @@
 class FuelStation
+  attr_reader :name, :address, :fuel_type, :access_times, :distance
   def initialize(station_data)
     binding.pry
     @name = station_data[:station_name]
