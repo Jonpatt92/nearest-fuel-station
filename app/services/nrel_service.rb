@@ -1,13 +1,12 @@
 class NrelService
   def get_nearest_station(address)
     response = fetch_data("/api/alt-fuel-stations/v1/nearest.json?location=#{address}&limit=1")
-    parse_data(response)[:results]
+    parse_data(response)[:fuel_stations]
   end
 
   private
 
   def parse_data(response)
-    binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 
