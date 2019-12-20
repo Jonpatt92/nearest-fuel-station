@@ -2,7 +2,7 @@ require './app/poros/fuel_station'
 
 class NrelFacade
   attr_reader :nearest_station
-  
+
   def initialize(address)
     @address = address
     @nearest_station = nearest_station
@@ -24,6 +24,6 @@ class NrelFacade
   end
 
   def create_station(station_data)
-      FuelStation.new(station_data[0])
+    FuelStation.new(station_data[0])
   end
 end
