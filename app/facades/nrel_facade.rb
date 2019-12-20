@@ -1,3 +1,5 @@
+require './app/poros/fuel_station'
+
 class NrelFacade
   def initialize(address)
     @address = address
@@ -8,7 +10,7 @@ class NrelFacade
   end
 
   def nearest_station
-    create_station(get_nearest_station_data)
+    create_stations(get_nearest_station_data)
   end
 
   private
@@ -16,5 +18,12 @@ class NrelFacade
 
   def service
     NrelService.new
+  end
+
+  def create_stations(station_data)
+    binding.pry
+    station_data.map do |data|
+      FuelStation.new(data)
+    end
   end
 end
